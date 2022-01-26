@@ -1,4 +1,4 @@
-exit_after_auth = true
+exit_after_auth = VAULT_AGENT_EXIT_AFTER_AUTH
 pid_file        = "./pidfile"
 
 auto_auth {
@@ -6,7 +6,7 @@ auto_auth {
     mount_path = "auth/aws"
     config = {
       type = "iam"
-      role = "AWS_IAM_ROLE"
+      role = "VAULT_ROLE"
     }
   }
 
@@ -17,7 +17,12 @@ auto_auth {
   }
 }
 
+listener "tcp" {
+  address = "0.0.0.0:8200"
+  tls_disable = true
+}
+
 template {
-  source      = "/vault-agent/CONFIG_FILE_NAME"
-  destination = "/config/CONFIG_FILE_NAME"
+  source      = "/vault-agent/TARGET_FILE_NAME"
+  destination = "/config/TARGET_FILE_NAME"
 }
