@@ -2,7 +2,7 @@
 
 A container image to run Vault agent on Amazon ECS.
 
-~> NOTE: This is not an image supported by HashiCorp.
+> **NOTE:** This is not an image supported by HashiCorp.
 
 The container sets up an opinionated configuration in `agent.hcl` to use
 the AWS IAM authentication method for Vault.
