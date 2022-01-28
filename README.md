@@ -1,8 +1,10 @@
 # vault-agent-ecs
 
-A Docker container to run Vault agent on Amazon ECS
+A container image to run Vault agent on Amazon ECS.
 
-It sets up an opinionated configuration in `agent.hcl` to use
+~> NOTE: This is not an image supported by HashiCorp.
+
+The container sets up an opinionated configuration in `agent.hcl` to use
 the AWS IAM authentication method for Vault.
 
 | Environment Variable | Description |
