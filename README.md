@@ -28,7 +28,7 @@ to set for the agent to run as a sidecar in your ECS task definition.
 resource "aws_ecs_task_definition" "task" {
 
   ## ommited for clarity
- 
+
   volume {
     name = "vault"
 
@@ -44,14 +44,14 @@ resource "aws_ecs_task_definition" "task" {
 
   container_definitions = jsonencode(
     [
-      
+
       ## add your container definition, make sure
       ## it depends on the "vault-agent" container
       ## and mounts the "vault" volume as read-only.
-    
+
       {
         name             = "vault-agent"
-        image            = "joatmon08/vault-agent-ecs:1.9.2"
+        image            = "joatmon08/vault-agent-ecs:latest"
         essential        = false
         logConfiguration = var.log_configuration
         mountPoints = [{
