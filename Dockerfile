@@ -1,4 +1,4 @@
-FROM vault:1.11.0
+FROM hashicorp/vault:1.16
 
 RUN mkdir -p /vault-agent
 COPY agent.hcl /vault-agent/agent.hcl
