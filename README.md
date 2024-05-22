@@ -17,7 +17,7 @@ the AWS IAM authentication method for Vault.
 Vault agent will read the template from `/vault-agent` and write the
 result to the `/config` directory.
 
-Use this container image as a sidecar in your Amazon ECS task definition. 
+Use this container image as a sidecar in your Amazon ECS task definition.
 You can use a shared EFS volume mounted at `/config` container path to store
 and read the rendered secrets from Vault agent.
 
