@@ -18,7 +18,8 @@ env:
 jobs:
   publish:
     runs-on:
-      - platform-eng-ent-v2-dual
+      - self-hosted
+      - platform-eng-ent
 
     outputs:
       image_uri: ${{ steps.meta.outputs.tags }}
